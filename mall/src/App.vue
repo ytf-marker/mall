@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-  
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+     <router-view></router-view>
+    <tab-bar>
+            <tab-bar-item path='/home'>       
+                  <img slot="item-icon" src="./assets/img/tabar/home1.png" alt="">
+                  <img slot="item-active-icon" src="./assets/img/tabar/home1_active.png" alt="">
+                  <div slot="item-text">首页</div>
+            </tab-bar-item>
+            <tab-bar-item  path='/category'>       
+                  <img slot="item-icon" src="./assets/img/tabar/home.png" alt="">
+                  <img slot="item-active-icon" src="./assets/img/tabar/home_active.png" alt="">
+                  <div slot="item-text">分类</div>
+            </tab-bar-item>
+            <tab-bar-item path='/car'>       
+                  <img slot="item-icon" src="./assets/img/tabar/car.png" alt="">
+                  <img slot="item-active-icon" src="./assets/img/tabar/car_active.png" alt="">
+                  <div slot="item-text">购物车</div>  
+            </tab-bar-item>
+            <tab-bar-item path='/main'>       
+                  <img slot="item-icon" src="./assets/img/tabar/main.png" alt="">
+                  <img slot="item-active-icon" src="./assets/img/tabar/main_active.png" alt="">
+                  <div slot="item-text">我的</div>
+            </tab-bar-item>  
+    </tab-bar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TabBar from './components/common/TabBar/tab-bar'
+import TabBarItem from './components/common/TabBar/tab-bat-item'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TabBar,
+    TabBarItem
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import '/ssets/css/base.css';
+
 </style>
